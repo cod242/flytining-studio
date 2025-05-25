@@ -1,150 +1,191 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Sitemiz</title>
-    <style>
-        /* Genel stil */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #1e1e1e;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            padding: 14px 20px;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        section {
-            padding: 40px 20px;
-        }
-
-        footer {
-            background-color: #1e1e1e;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        .form-container {
-            background-color: #333;
-            padding: 20px;
-            border-radius: 5px;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-            background-color: #555;
-            color: white;
-        }
-
-        textarea {
-            height: 150px;
-        }
-
-        button {
-            background-color: #007bff;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        .about-panel {
-            background-color: #444;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flytining Studio</title>
+<style>
+  /* Reset ve temel */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  body {
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  header {
+    background: #2b2d42;
+    color: white;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  header h1 {
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  nav {
+    margin-top: 0.5rem;
+  }
+  nav a {
+    color: #8d99ae;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  nav a:hover {
+    color: #ef233c;
+  }
+  section {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  h2 {
+    margin-bottom: 1rem;
+    color: #2b2d42;
+    border-bottom: 3px solid #ef233c;
+    display: inline-block;
+    padding-bottom: 0.3rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  /* Hizmetler */
+  .services {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .service {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    flex: 1 1 280px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  .service:hover {
+    transform: translateY(-5px);
+  }
+  /* Form */
+  form {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #2b2d42;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+  }
+  textarea {
+    min-height: 120px;
+  }
+  button {
+    margin-top: 1.5rem;
+    background: #ef233c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #d62828;
+  }
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+  }
+  /* Responsive */
+  @media (max-width: 700px) {
+    .services {
+      flex-direction: column;
+    }
+  }
+</style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>FLYTİNİNG STUDİO</h1>
-        <p>Hoşgeldiniz.</p>
-    </header>
+<header>
+  <h1>Flytining Studio</h1>
+  <nav>
+    <a href="#home">Ana Sayfa</a>
+    <a href="#services">Hizmetler</a>
+    <a href="#contact">İletişim</a>
+  </nav>
+</header>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">Hakkımızda</a>
-        <a href="#contact">Bize Ulaşın</a>
-    </nav>
+<section id="home">
+  <h2>Hoşgeldiniz!</h2>
+  <p>Flytining Studio, yaratıcı ve modern web çözümleri sunar. Projelerinizi bir üst seviyeye taşıyoruz.</p>
+</section>
 
-    <!-- Hakkımızda -->
-    <section id="about">
-        <div class="about-panel">
-            <h2>Hakkımızda</h2>
-            <p>Eğer bug varsa bize ulaşın,Biz oyun geliştiriciyiz ve sizin için elimizden geleni yapıcaz.Fikriniz varsada paylaşın,değerlendirilir,ona göre yapılır.sizin için varız.</p>
-        </div>
-    </section>
+<section id="services">
+  <h2>Hizmetlerimiz</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Web Tasarım</h3>
+      <p>Şık ve kullanıcı dostu web siteleri tasarlıyoruz.</p>
+    </div>
+    <div class="service">
+      <h3>UI/UX</h3>
+      <p>Kullanıcı deneyimini artıran arayüzler geliştiriyoruz.</p>
+    </div>
+    <div class="service">
+      <h3>Danışmanlık</h3>
+      <p>Projenize özel strateji ve teknik destek sağlıyoruz.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Bize Ulaşın -->
-    <section id="contact">
-        <h2>Bize Ulaşın</h2>
-        <div class="form-container">
-            <form action="ukk4550@gmail.com" method="POST" enctype="multipart/form-data">
-                <label for="name">Adınız:</label>
-                <input type="text" id="name" name="name" required>
+<section id="contact">
+  <h2>İletişim</h2>
+  <form
+    action="https://formspree.io/f/yourformid"
+    method="POST"
+  >
+    <label for="name">Adınız</label>
+    <input type="text" id="name" name="name" required />
 
-                <label for="email">E-posta:</label>
-                <input type="email" id="email" name="email" required>
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="_replyto" required />
 
-                <label for="message">Mesajınız:</label>
-                <textarea id="message" name="message" required></textarea>
+    <label for="message">Mesajınız</label>
+    <textarea id="message" name="message" required></textarea>
 
-                <button type="submit">Gönder</button>
-            </form>
-        </div>
-    </section>
+    <button type="submit">Gönder</button>
+  </form>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 FLYTİNİNG Studio| Tüm hakları saklıdır.</p>
-    </footer>
+<footer>
+  &copy; 2025 Flytining Studio
+</footer>
 
 </body>
 </html>
